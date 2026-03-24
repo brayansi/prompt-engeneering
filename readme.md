@@ -5,11 +5,11 @@ Repositório de estudo e referência sobre Prompt Engineering, com documentaçã
 ## Conteúdo
 
 - **`1-introducao/`** — Documentação:
-  - [Introdução ao Prompt Engineering](1-introducao/prompt-engeneering.md) — visão geral, cenários de aplicação, conceitos técnicos e fluxo de estudo recomendado.
-- **`2-role-prompts/`** — Exemplos e documentação:
-  - [Role Prompts](2-role-prompts/role-prompts.md) — definição explícita do papel do modelo, quando usar, limitações e exemplos práticos.
-  - Exemplos `.py` da seção:
-    - [`role-prompts.py`](2-role-prompts/role-prompts.py)
+  - [Introdução ao Prompt Engineering](1-introducao/prompt-engeneering.md) — o que é Prompt Engineering e por que importa.
+- **`2-tipos-de-prompts/`** — Exemplos e documentação:
+  - [Role Prompts](2-tipos-de-prompts/1-role-prompts/role-prompts.md) — script que demonstra o efeito de diferentes roles no mesmo prompt.
+  - Exemplo `.py`:
+    - [`role-prompts.py`](2-tipos-de-prompts/1-role-prompts/role-prompts.py)
 
 ## Pré-requisitos
 
@@ -66,4 +66,4 @@ Esse comando lista os pacotes instalados no ambiente virtual atual e salva no ar
 pip install -r requirements.txt
 ```
 
-Use a seção `1-introducao/` como ponto de partida conceitual e `2-role-prompts/` para praticar o primeiro tipo de prompt com exemplos de código.
+Use a seção `1-introducao/` como ponto de partida conceitual e `2-tipos-de-prompts/` para praticar com exemplos de código.
