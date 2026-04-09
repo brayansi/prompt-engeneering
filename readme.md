@@ -6,10 +6,9 @@ Repositório de estudo e referência sobre Prompt Engineering, com documentaçã
 
 - **`1-introducao/`** — Documentação:
   - [Introdução ao Prompt Engineering](1-introducao/prompt-engeneering.md) — o que é Prompt Engineering e por que importa.
-- **`2-tipos-de-prompts/`** — Exemplos e documentação:
-  - [Role Prompts](2-tipos-de-prompts/1-role-prompts/role-prompts.md) — script que demonstra o efeito de diferentes roles no mesmo prompt.
-  - Exemplo `.py`:
-    - [`role-prompts.py`](2-tipos-de-prompts/1-role-prompts/role-prompts.py)
+- **`2-tipos-de-prompts/`** — Exemplos práticos de 10 técnicas de prompting:
+  - [Referência das técnicas](2-tipos-de-prompts/AGENTS.md) — explicação de cada tipo de prompt com exemplos e quando usar.
+  - Scripts: `1-Role-prompts.py`, `2-Zero-shot.py`, `3-One-few-shot.py`, `4-CoT.py`, `4.1-CoT-Self-consistency.py`, `5-ToT.py`, `6-SoT.py`, `7-ReAct.py`, `8-Prompt-channing.py`, `9-Least-to-most.py`
 
 ## Pré-requisitos
 
@@ -28,42 +27,52 @@ Depois, preencha as chaves no `.env`:
 
 - `OPENAI_API_KEY` ou `GOOGLE_API_KEY` (para exemplos com APIs de LLMs, conforme a seção)
 
-## Exemplo rápido
+## Executando os exemplos
 
 ```bash
 # Criar e ativar ambiente virtual
-python -m venv .venv
-source .venv/bin/activate
+python -m venv venv
+source venv/bin/activate  # macOS/Linux
+# venv\Scripts\activate   # Windows
 
-# Instalar pacotes principais para estudos com LLMs
+# Instalar dependências
 pip install -r requirements.txt
+
+# Entrar na pasta de exemplos
+cd 2-tipos-de-prompts
+
+# Executar qualquer script
+python 1-Role-prompts.py
+python 2-Zero-shot.py
+python 3-One-few-shot.py
+python 4-CoT.py
+python 4.1-CoT-Self-consistency.py
+python 5-ToT.py
+python 6-SoT.py
+python 7-ReAct.py
+python 8-Prompt-channing.py
+python 9-Least-to-most.py
+
+# Desativar quando terminar
+deactivate
 ```
 
-Ou, para instalação manual dos principais pacotes:
-
-```bash
-pip install python-dotenv openai
-```
+> O script `8-Prompt-channing.py` gera o arquivo `prompt_chaining_result.md` com os resultados encadeados.
 
 ### Principais pacotes utilizados
 
 | Pacote | Descrição |
 |--------|-----------|
-| **`python-dotenv`** | Carrega variáveis de ambiente de um arquivo `.env` (chaves de API). |
-| **`openai`** | Cliente oficial da API OpenAI para interação com modelos GPT. |
+| **`python-dotenv`** | Carrega variáveis de ambiente do arquivo `.env`. |
+| **`langchain`** | Framework para interações com LLMs. |
+| **`langchain-openai`** | Integração LangChain com a API OpenAI. |
+| **`openai`** | Cliente oficial da API OpenAI. |
+| **`rich`** | Formatação de saída no terminal. |
 
 ### Salvar dependências do ambiente
-
-Depois de instalar os pacotes, gere o arquivo de dependências do projeto:
 
 ```bash
 pip freeze > requirements.txt
 ```
 
-Esse comando lista os pacotes instalados no ambiente virtual atual e salva no arquivo `requirements.txt`. Isso facilita reproduzir o mesmo ambiente em outra máquina com:
-
-```bash
-pip install -r requirements.txt
-```
-
-Use a seção `1-introducao/` como ponto de partida conceitual e `2-tipos-de-prompts/` para praticar com exemplos de código.
+Use `1-introducao/` como ponto de partida conceitual e `2-tipos-de-prompts/` para praticar com os exemplos.
